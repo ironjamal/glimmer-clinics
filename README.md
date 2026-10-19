@@ -1,27 +1,17 @@
-# Glimmer Clinics — Website
+# Glimmer Clinics website
 
-Single-page React (Vite) website for Glimmer Clinics, El Nozha, Cairo.
+## Run it
+1. Put your `App.jsx` into `src/App.jsx` (replace the placeholder).
+2. `npm install`
+3. `npm run fix`   (applies all fixes; keeps a clean backup and is safe to re-run)
+4. `npm run dev`   → local preview
+5. `npm run build` → production files in `dist/`, upload to any host
 
-## Run locally
-
-```bash
-npm install
-npm run dev
-```
-
-## Build
-
-```bash
-npm run build
-```
-
-The static site is written to `dist/` and can be hosted on Netlify, Vercel, or any static host.
-
-## Customize
-
-All clinic content, images, booking settings and contact details live in the `CONFIG` object at the top of `src/App.jsx`.
-
-- Set `rating.verified` to `true` only after checking the Google listing.
-- Add expert entries to `experts` once the clinic confirms credentials.
-- Replace illustrated placeholders by setting an image `url` in `CONFIG`.
-- Set `brand.logoUrl` to swap in the official logo.
+## Still needs real content from the clinic (edit CONFIG at the top of App.jsx)
+- `brand.logoUrl` – the real logo file (put it in `public/` and use `/logo.svg`)
+- `images.hero.url` and gallery photos – the site uses illustrated placeholders until real photos are supplied
+- `contact.openingHours` – e.g. `[{ d: "Sat–Thu", h: "10:00 – 20:00" }]`
+- `contact.mapsUrl` – the clinic's Google Maps share link
+- `experts` – practitioner names, titles and credentials (section stays hidden while empty)
+- `showReviews` / `rating.verified` – turn on only once real, consented reviews exist
+- Analytics – events are pushed to `window.dataLayer`; add your Google Tag Manager snippet to `index.html`
